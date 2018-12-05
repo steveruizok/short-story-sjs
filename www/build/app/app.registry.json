@@ -1,0 +1,79 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "global": "app.global.js",
+  "core": "app.core.js",
+  "components": {
+    "app-home": {
+      "bundleIds": {
+        "$": "app-home"
+      },
+      "encapsulation": "shadow"
+    },
+    "app-profile": {
+      "bundleIds": {
+        "$": "app-profile"
+      },
+      "encapsulation": "shadow"
+    },
+    "app-root": {
+      "bundleIds": {
+        "$": "app-root"
+      },
+      "encapsulation": "shadow"
+    },
+    "short-story": {
+      "bundleIds": {
+        "$": "short-story"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-boolean-input": {
+      "bundleIds": {
+        "$": "ssy-boolean-input"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-input-label": {
+      "bundleIds": {
+        "$": "ssy-input-label"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-number-input": {
+      "bundleIds": {
+        "$": "ssy-number-input"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-text-input": {
+      "bundleIds": {
+        "$": "ssy-text-input"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-width-measure": {
+      "bundleIds": {
+        "$": "short-story"
+      },
+      "encapsulation": "shadow"
+    },
+    "stencil-route": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    },
+    "stencil-route-switch": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    },
+    "stencil-router": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    }
+  }
+}
