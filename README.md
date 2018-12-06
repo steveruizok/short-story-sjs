@@ -1,6 +1,8 @@
 # Short Story (StencilJS)
 
-Beautiful component previews for design, docs and demos.
+Beautiful component previews for design, docs and demos. Created as a webcomponent (`short-story`) for use anywhere.
+
+<a href="https://xenodochial-newton-5a6053.netlify.com/">Demo</a>
 
 ## Example
 
