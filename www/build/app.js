@@ -1,6 +1,6 @@
 /*!
  * Built with http://stenciljs.com
- * 2018-12-05T21:52:41
+ * 2018-12-06T13:37:45
  */
 (function(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components) {
 
@@ -134,4 +134,4 @@ function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
 
   init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-  })(window, document, "App","app",0,"app.core.js","es5-build-disabled.js","hydrated","app-home,app-profile,app-root,short-story,ssy-boolean-input,ssy-input-label,ssy-number-input,ssy-text-input,ssy-width-measure,stencil-route,stencil-route-switch,stencil-router",HTMLElement.prototype);
+  })(window, document, "App","app",0,"app.core.js","es5-build-disabled.js","hydrated","app-home,app-profile,app-root,short-story,ssy-boolean-input,ssy-enum-input,ssy-input-label,ssy-measure,ssy-number-input,ssy-string-input,stencil-route,stencil-route-switch,stencil-router",HTMLElement.prototype);

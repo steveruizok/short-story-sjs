@@ -30,12 +30,16 @@ interface Values {
 	shadow: true,
 })
 export class ShortStory {
+	@Prop() name: string
+	@Prop() theme: string = 'dark'
 	@Prop() showWidth: boolean
 	@Prop() knobs: { [key: string]: any }
 	@Prop() renderFunc: (any) => any
 
 	@State() values: Values = { name: 'Steve' }
 	@State() inputs: any[]
+
+	header
 
 	componentWillLoad() {
 		const state = Object.keys(this.knobs).reduce(
@@ -70,7 +74,7 @@ export class ShortStory {
 
 		const inputTypes: InputTypes = {
 			string: {
-				input: 'ssy-text-input',
+				input: 'ssy-string-input',
 				props: ['textarea'],
 			},
 			number: {
@@ -80,6 +84,10 @@ export class ShortStory {
 			boolean: {
 				input: 'ssy-boolean-input',
 				props: [],
+			},
+			enum: {
+				input: 'ssy-enum-input',
+				props: ['options', 'optionTitles'],
 			},
 		}
 
@@ -98,19 +106,20 @@ export class ShortStory {
 	render() {
 		const children = this.renderFunc(this.values)
 
-		return (
-			<div class="short-story">
-				<div class="component-row">
-					<div class="component-container">
-						{this.showWidth ? (
-							<ssy-width-measure content={children} />
-						) : (
-							children
-						)}
-					</div>
-				</div>
-				<div class="inputs-container">{this.inputs}</div>
-			</div>
-		)
+		return [
+			this.name && (
+				<h2
+					ref={n => (this.header = n)}
+					id={this.name}
+					class={`title ${this.theme}`}
+				>
+					<a href={`#${this.name}`}>{this.name}</a>
+				</h2>
+			),
+			<div class="component-row ">
+				<ssy-measure theme={this.theme} content={children} />
+			</div>,
+			<div class={`inputs-container ${this.theme}`}>{this.inputs}</div>,
+		]
 	}
 }

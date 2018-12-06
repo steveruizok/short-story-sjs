@@ -1,25 +1,92 @@
 .app-home {
 	padding: 10px;
+	--ssy-field: #ccc;
+	--ssy-knob: #fff;
+	--ssy-select: #333;
 }
 
-button {
-	background: #5851ff;
-	color: white;
-	margin: 8px;
-	border: none;
-	font-size: 13px;
-	font-weight: 700;
-	text-transform: uppercase;
-	padding: 16px 20px;
-	border-radius: 2px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-	outline: 0;
-	letter-spacing: 0.04em;
-	transition: all 0.15s ease;
+.dark {
+	--link-color: #ff8663;
+	background-color: #1d1d1d;
+	color: #2d64c3;
+}
+
+.light {
+	--link-color: #754e48;
+	background-color: #fff;
+	color: #000;
+}
+
+a {
+	color: var(--link-color);
+}
+
+.mode-control {
+	display: flex;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 32px;
+	width: auto;
+}
+
+h1,
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type='checkbox'] {
+	position: relative;
+	visibility: hidden;
+	display: block;
+	height: 29px;
+}
+
+input[type='checkbox']:before {
+	content: '';
 	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: visible;
+	height: 28px;
+	width: 44px;
+	padding: 0;
+	margin: 0;
+	display: block;
+	border-radius: 14px;
+	transition: all 0.15s;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+	border: var(--ssy-border);
+	background-color: var(--ssy-field);
 }
 
-button:hover {
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
-	transform: translateY(1px);
+input[type='checkbox']:checked:before {
+	border: var(--ssy-outline);
+	background-color: var(--ssy-select);
+}
+
+input[type='checkbox']::after {
+	content: '';
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	visibility: visible;
+	height: 29px;
+	width: 29px;
+	padding: 0;
+	margin: 0;
+	margin-left: 0px;
+	display: block;
+	border-radius: 100%;
+	transform: scale(0.8);
+	background-color: var(--ssy-knob);
+	transition: all 0.15s;
+	cursor: pointer;
+	box-shadow: 1.3px 1.3px 2px rgba(0, 0, 0, 0.25),
+		0px 0px 1.3px rgba(13, 13, 13, 0.25);
+}
+
+input[type='checkbox']:checked:after {
+	margin-left: 16px;
+	background-color: var(--ssy-field);
 }

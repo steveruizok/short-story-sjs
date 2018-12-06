@@ -26,7 +26,7 @@
     },
     "short-story": {
       "bundleIds": {
-        "$": "short-story"
+        "$": "app-home"
       },
       "encapsulation": "shadow"
     },
@@ -36,9 +36,21 @@
       },
       "encapsulation": "shadow"
     },
+    "ssy-enum-input": {
+      "bundleIds": {
+        "$": "ssy-enum-input"
+      },
+      "encapsulation": "shadow"
+    },
     "ssy-input-label": {
       "bundleIds": {
         "$": "ssy-input-label"
+      },
+      "encapsulation": "shadow"
+    },
+    "ssy-measure": {
+      "bundleIds": {
+        "$": "app-home"
       },
       "encapsulation": "shadow"
     },
@@ -48,15 +60,9 @@
       },
       "encapsulation": "shadow"
     },
-    "ssy-text-input": {
+    "ssy-string-input": {
       "bundleIds": {
-        "$": "ssy-text-input"
-      },
-      "encapsulation": "shadow"
-    },
-    "ssy-width-measure": {
-      "bundleIds": {
-        "$": "short-story"
+        "$": "ssy-string-input"
       },
       "encapsulation": "shadow"
     },

@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core'
+import { Component, State } from '@stencil/core'
 
 @Component({
 	tag: 'app-home',
@@ -6,21 +6,46 @@ import { Component } from '@stencil/core'
 	shadow: true,
 })
 export class AppHome {
+	@State() theme: string = 'light'
 	render() {
+		console.log(this.theme)
 		return (
-			<div class="app-home">
-				<p>Short Story demo</p>
+			<div class={`app-home ${this.theme}`}>
+				<h1>Short Story demo</h1>
+				<p>
+					<a href="http://twitter.com/steveruizok/">@steveruizok</a>
+				</p>
+				<div class="mode-control">
+					<label htmlFor="mode-switch">Dark Mode</label>
+					<input
+						id="mode-switch"
+						type="checkbox"
+						onChange={() =>
+							(this.theme = this.theme === 'light' ? 'dark' : 'light')
+						}
+					/>
+				</div>
 				<short-story
+					name="Simple name"
+					theme={this.theme}
+					knobs={{
+						name: {
+							label: 'Name',
+							type: 'string',
+							defaultValue: 'Steve',
+						},
+					}}
+					showWidth
+					renderFunc={({ name }) => <p>Hello, my name is {name}.</p>}
+				/>
+				<short-story
+					name="All Controls"
+					theme={this.theme}
 					knobs={{
 						name: {
 							label: 'Name',
 							type: 'string',
 							defaultValue: 'Joe',
-						},
-						message: {
-							type: 'string',
-							textarea: true,
-							defaultValue: 'Dear diary...',
 						},
 						age: {
 							label: 'Age',
@@ -36,17 +61,44 @@ export class AppHome {
 							step: 1,
 							defaultValue: 3,
 						},
-						disabled: {
-							label: 'Disabled',
+						country: {
+							label: 'Country',
+							type: 'enum',
+							options: ['Spain', 'Germany', 'England'],
+							defaultValue: 'England',
+						},
+						locale: {
+							label: 'Locale',
+							type: 'enum',
+							options: ['en-gb', 'en-us', 'en-au'],
+							optionTitles: ['British', 'American', 'Australian'],
+							defaultValue: 'en-gb',
+						},
+						isOk: {
+							label: 'Okay',
 							type: 'boolean',
 							defaultValue: false,
 						},
+						diaryEntry: {
+							type: 'string',
+							textarea: true,
+							defaultValue: 'Dear diary...',
+						},
 					}}
 					showWidth
-					renderFunc={({ name, age, rating, disabled }) => (
+					renderFunc={({
+						name,
+						age,
+						rating,
+						isOk,
+						country,
+						locale,
+						diaryEntry,
+					}) => (
 						<p>
-							Hello, my name is {name}, I'm {age} years old. I have a {rating}{' '}
-							star rating. {disabled && 'Disabled!'}
+							Hello, my name is {name}, I'm {age} years old. I live in {country}
+							. I have a {rating} star rating. I speak {locale}.{' '}
+							{isOk && "I'm okay."} {diaryEntry}
 						</p>
 					)}
 				/>

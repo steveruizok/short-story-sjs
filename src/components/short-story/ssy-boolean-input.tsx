@@ -23,17 +23,19 @@ export class ShortStoryBooleanInput {
 	}
 
 	render() {
-		return (
-			<div class="input">
-				<ssy-input-label label={this.label} propName={this.propName} />
-				<input
-					id={`stsy_boolean_input_${this.label}`}
-					name={`stsy_boolean_input_${this.label}`}
-					type={'checkbox'}
-					onChange={this.inputChanged}
-					value={this.value}
-				/>
-			</div>
-		)
+		return [
+			<ssy-input-label
+				label={this.label}
+				propName={this.propName}
+				type="boolean"
+			/>,
+			<input
+				id={`stsy_input_${this.label}`}
+				name={`stsy_input_${this.label}`}
+				type={'checkbox'}
+				onChange={this.inputChanged}
+				value={this.value}
+			/>,
+		]
 	}
 }

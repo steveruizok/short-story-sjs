@@ -31,13 +31,17 @@ export namespace Components {
 
   interface ShortStory {
     'knobs': { [key: string]: any };
+    'name': string;
     'renderFunc': (any) => any;
     'showWidth': boolean;
+    'theme': string;
   }
   interface ShortStoryAttributes extends StencilHTMLAttributes {
     'knobs'?: { [key: string]: any };
+    'name'?: string;
     'renderFunc'?: (any) => any;
     'showWidth'?: boolean;
+    'theme'?: string;
   }
 
   interface SsyBooleanInput {
@@ -53,13 +57,41 @@ export namespace Components {
     'updateValue'?: any;
   }
 
+  interface SsyEnumInput {
+    'defaultValue': any;
+    'label': string;
+    'optionTitles': string[];
+    'options': string[];
+    'propName': string;
+    'updateValue': any;
+  }
+  interface SsyEnumInputAttributes extends StencilHTMLAttributes {
+    'defaultValue'?: any;
+    'label'?: string;
+    'optionTitles'?: string[];
+    'options'?: string[];
+    'propName'?: string;
+    'updateValue'?: any;
+  }
+
   interface SsyInputLabel {
     'label': string;
     'propName': string;
+    'type': string;
   }
   interface SsyInputLabelAttributes extends StencilHTMLAttributes {
     'label'?: string;
     'propName'?: string;
+    'type'?: string;
+  }
+
+  interface SsyMeasure {
+    'content': any;
+    'theme': string;
+  }
+  interface SsyMeasureAttributes extends StencilHTMLAttributes {
+    'content'?: any;
+    'theme'?: string;
   }
 
   interface SsyNumberInput {
@@ -83,26 +115,19 @@ export namespace Components {
     'updateValue'?: any;
   }
 
-  interface SsyTextInput {
+  interface SsyStringInput {
     'defaultValue': any;
     'label': string;
     'propName': string;
     'textarea': boolean;
     'updateValue': any;
   }
-  interface SsyTextInputAttributes extends StencilHTMLAttributes {
+  interface SsyStringInputAttributes extends StencilHTMLAttributes {
     'defaultValue'?: any;
     'label'?: string;
     'propName'?: string;
     'textarea'?: boolean;
     'updateValue'?: any;
-  }
-
-  interface SsyWidthMeasure {
-    'content': any;
-  }
-  interface SsyWidthMeasureAttributes extends StencilHTMLAttributes {
-    'content'?: any;
   }
 }
 
@@ -113,10 +138,11 @@ declare global {
     'AppRoot': Components.AppRoot;
     'ShortStory': Components.ShortStory;
     'SsyBooleanInput': Components.SsyBooleanInput;
+    'SsyEnumInput': Components.SsyEnumInput;
     'SsyInputLabel': Components.SsyInputLabel;
+    'SsyMeasure': Components.SsyMeasure;
     'SsyNumberInput': Components.SsyNumberInput;
-    'SsyTextInput': Components.SsyTextInput;
-    'SsyWidthMeasure': Components.SsyWidthMeasure;
+    'SsyStringInput': Components.SsyStringInput;
   }
 
   interface StencilIntrinsicElements {
@@ -125,10 +151,11 @@ declare global {
     'app-root': Components.AppRootAttributes;
     'short-story': Components.ShortStoryAttributes;
     'ssy-boolean-input': Components.SsyBooleanInputAttributes;
+    'ssy-enum-input': Components.SsyEnumInputAttributes;
     'ssy-input-label': Components.SsyInputLabelAttributes;
+    'ssy-measure': Components.SsyMeasureAttributes;
     'ssy-number-input': Components.SsyNumberInputAttributes;
-    'ssy-text-input': Components.SsyTextInputAttributes;
-    'ssy-width-measure': Components.SsyWidthMeasureAttributes;
+    'ssy-string-input': Components.SsyStringInputAttributes;
   }
 
 
@@ -162,10 +189,22 @@ declare global {
     new (): HTMLSsyBooleanInputElement;
   };
 
+  interface HTMLSsyEnumInputElement extends Components.SsyEnumInput, HTMLStencilElement {}
+  var HTMLSsyEnumInputElement: {
+    prototype: HTMLSsyEnumInputElement;
+    new (): HTMLSsyEnumInputElement;
+  };
+
   interface HTMLSsyInputLabelElement extends Components.SsyInputLabel, HTMLStencilElement {}
   var HTMLSsyInputLabelElement: {
     prototype: HTMLSsyInputLabelElement;
     new (): HTMLSsyInputLabelElement;
+  };
+
+  interface HTMLSsyMeasureElement extends Components.SsyMeasure, HTMLStencilElement {}
+  var HTMLSsyMeasureElement: {
+    prototype: HTMLSsyMeasureElement;
+    new (): HTMLSsyMeasureElement;
   };
 
   interface HTMLSsyNumberInputElement extends Components.SsyNumberInput, HTMLStencilElement {}
@@ -174,16 +213,10 @@ declare global {
     new (): HTMLSsyNumberInputElement;
   };
 
-  interface HTMLSsyTextInputElement extends Components.SsyTextInput, HTMLStencilElement {}
-  var HTMLSsyTextInputElement: {
-    prototype: HTMLSsyTextInputElement;
-    new (): HTMLSsyTextInputElement;
-  };
-
-  interface HTMLSsyWidthMeasureElement extends Components.SsyWidthMeasure, HTMLStencilElement {}
-  var HTMLSsyWidthMeasureElement: {
-    prototype: HTMLSsyWidthMeasureElement;
-    new (): HTMLSsyWidthMeasureElement;
+  interface HTMLSsyStringInputElement extends Components.SsyStringInput, HTMLStencilElement {}
+  var HTMLSsyStringInputElement: {
+    prototype: HTMLSsyStringInputElement;
+    new (): HTMLSsyStringInputElement;
   };
 
   interface HTMLElementTagNameMap {
@@ -192,10 +225,11 @@ declare global {
     'app-root': HTMLAppRootElement
     'short-story': HTMLShortStoryElement
     'ssy-boolean-input': HTMLSsyBooleanInputElement
+    'ssy-enum-input': HTMLSsyEnumInputElement
     'ssy-input-label': HTMLSsyInputLabelElement
+    'ssy-measure': HTMLSsyMeasureElement
     'ssy-number-input': HTMLSsyNumberInputElement
-    'ssy-text-input': HTMLSsyTextInputElement
-    'ssy-width-measure': HTMLSsyWidthMeasureElement
+    'ssy-string-input': HTMLSsyStringInputElement
   }
 
   interface ElementTagNameMap {
@@ -204,10 +238,11 @@ declare global {
     'app-root': HTMLAppRootElement;
     'short-story': HTMLShortStoryElement;
     'ssy-boolean-input': HTMLSsyBooleanInputElement;
+    'ssy-enum-input': HTMLSsyEnumInputElement;
     'ssy-input-label': HTMLSsyInputLabelElement;
+    'ssy-measure': HTMLSsyMeasureElement;
     'ssy-number-input': HTMLSsyNumberInputElement;
-    'ssy-text-input': HTMLSsyTextInputElement;
-    'ssy-width-measure': HTMLSsyWidthMeasureElement;
+    'ssy-string-input': HTMLSsyStringInputElement;
   }
 
 

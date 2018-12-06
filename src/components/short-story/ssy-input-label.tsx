@@ -5,22 +5,18 @@ import { Component, Prop } from '@stencil/core'
 	styleUrl: 'short-story.css',
 	shadow: true,
 })
-export class ShortStoryLabel {
+export class ShortStoryInputLabel {
 	@Prop() propName: string
 	@Prop() label: string
+	@Prop() type: string
 
 	render() {
 		return (
-			<label htmlFor={`stsy_number_input_${this.label}`}>
-				{this.label ? (
-					[
-						<span class="named-label">{this.label} (</span>,
-						<span class="variable-name">{this.propName}</span>,
-						<span class="named-label">)</span>,
-					]
-				) : (
-					<span class="variable-name">{this.propName}</span>
-				)}
+			<label class="label" htmlFor={`stsy_input_${this.label}`}>
+				<span class="named-label">{this.label || this.propName}</span>
+				<span class="type-label">
+					{this.propName}: {this.type}
+				</span>
 			</label>
 		)
 	}
