@@ -13,7 +13,8 @@ export class AppHome {
 			<div class={`app-home ${this.theme}`}>
 				<h1>Short Story demo</h1>
 				<p>
-					<a href="http://twitter.com/steveruizok/">@steveruizok</a>
+					<a href="http://twitter.com/steveruizok/">@steveruizok</a> |{' '}
+					<a href="https://github.com/steveruizok/short-story-sjs">Github</a>
 				</p>
 				<div class="mode-control">
 					<label htmlFor="mode-switch">Dark Mode</label>
