@@ -94,16 +94,19 @@ label {
 }
 
 .named-label {
+	font-size: 12px;
 	text-transform: uppercase;
 	font-family: var(--ssy-font-family);
 }
 
 .variable-name {
+	font-size: 12px;
 	letter-spacing: 1.35px;
 	font-family: var(--ssy-code-family);
 }
 
 .type-label {
+	font-size: 12px;
 	letter-spacing: 1.35px;
 	font-weight: 400;
 	opacity: 0.7;
