@@ -13,5 +13,8 @@
     "@stencil/core": "~0.15.2",
     "@stencil/router": "~0.3.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "workbox-build": "3.4.1"
+  }
 }

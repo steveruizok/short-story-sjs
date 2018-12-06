@@ -2,83 +2,83 @@
   "namespace": "App",
   "fsNamespace": "app",
   "loader": "../app.js",
-  "corePolyfilled": "es5-build-disabled.js",
   "global": "app.global.js",
-  "core": "app.core.js",
+  "core": "app.k1vmvi4u.js",
+  "corePolyfilled": "app.1p3s4hzh.js",
   "components": {
     "app-home": {
       "bundleIds": {
-        "$": "app-home"
+        "$": "fmve6rto"
       },
       "encapsulation": "shadow"
     },
     "app-profile": {
       "bundleIds": {
-        "$": "app-profile"
+        "$": "to8qf6wc"
       },
       "encapsulation": "shadow"
     },
     "app-root": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "k5eyrrxp"
       },
       "encapsulation": "shadow"
     },
     "short-story": {
       "bundleIds": {
-        "$": "app-home"
+        "$": "fmve6rto"
       },
       "encapsulation": "shadow"
     },
     "ssy-boolean-input": {
       "bundleIds": {
-        "$": "ssy-boolean-input"
+        "$": "4mktzk2g"
       },
       "encapsulation": "shadow"
     },
     "ssy-enum-input": {
       "bundleIds": {
-        "$": "ssy-enum-input"
+        "$": "rgqqzdmi"
       },
       "encapsulation": "shadow"
     },
     "ssy-input-label": {
       "bundleIds": {
-        "$": "ssy-input-label"
+        "$": "b66mhpuh"
       },
       "encapsulation": "shadow"
     },
     "ssy-measure": {
       "bundleIds": {
-        "$": "app-home"
+        "$": "fmve6rto"
       },
       "encapsulation": "shadow"
     },
     "ssy-number-input": {
       "bundleIds": {
-        "$": "ssy-number-input"
+        "$": "m8rt5pth"
       },
       "encapsulation": "shadow"
     },
     "ssy-string-input": {
       "bundleIds": {
-        "$": "ssy-string-input"
+        "$": "lic06zdx"
       },
       "encapsulation": "shadow"
     },
     "stencil-route": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "k5eyrrxp"
       }
     },
     "stencil-route-switch": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "k5eyrrxp"
       }
     },
     "stencil-router": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "k5eyrrxp"
       }
     }
   }
