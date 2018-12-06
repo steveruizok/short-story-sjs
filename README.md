@@ -6,7 +6,7 @@ Beautiful component previews for design, docs and demos. Created as a webcompone
 
 ## Example
 
-```javascript
+```jsx
 <short-story
 	name="All Controls"
 	theme="light"
